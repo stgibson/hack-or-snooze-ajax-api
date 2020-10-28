@@ -1,0 +1,55 @@
+GET https://hack-or-snooze-v3.herokuapp.com/stories HTTP/1.1
+
+###
+
+POST https://hack-or-snooze-v3.herokuapp.com/signup HTTP/1.1
+content-type: application/json
+
+{
+    "user": {
+      "name": "Sean Gibson",
+      "username": "stgibson",
+      "password": "door"
+    }
+}
+
+###
+
+DELETE https://hack-or-snooze-v3.herokuapp.com/users/stgibson HTTP/1.1
+content-type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0Z2lic29uIiwiaWF0IjoxNjAzNjg0MTQ5fQ.YK7k5vHv2Qn2pFXCRJoo0_q4c2QcIxlmutYKovwE0AY"
+}
+
+###
+
+POST https://hack-or-snooze-v3.herokuapp.com/stories HTTP/1.1
+content-type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0Z2lic29uIiwiaWF0IjoxNjAzNjg0MTQ5fQ.YK7k5vHv2Qn2pFXCRJoo0_q4c2QcIxlmutYKovwE0AY",
+  "story": {
+    "author": "Someone",
+    "title": "Google",
+    "url": "https://www.google.com/"
+  }
+}
+
+###
+
+DELETE https://hack-or-snooze-v3.herokuapp.com/stories/e7aea114-a067-4e10-bffd-6df9ee5d3091 HTTP/1.1
+content-type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0Z2lic29uIiwiaWF0IjoxNjAzNjg0MTQ5fQ.YK7k5vHv2Qn2pFXCRJoo0_q4c2QcIxlmutYKovwE0AY"
+}
+
+###
+
+DELETE https://hack-or-snooze-v3.herokuapp.com/users/stgibson/favorites/98300546-bf32-4d32-b8f3-61a236c42e2c HTTP/1.1
+content-type: application/json
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0Z2lic29uIiwiaWF0IjoxNjAzODM4OTEwfQ.wMAWspkOCGTVL8fwYSc3EBv1yJXFyQhDCiPQmkQXMCU"
+}
