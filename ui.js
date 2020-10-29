@@ -37,9 +37,11 @@ $(async function() {
     const userInstance = await User.login(username, password);
 
     // set the global user to the user instance
-    currentUser = userInstance;
-    syncCurrentUserToLocalStorage();
-    loginAndSubmitForm();
+    if (userInstance) {
+      currentUser = userInstance;
+      syncCurrentUserToLocalStorage();
+      loginAndSubmitForm();
+    }
   });
 
   /**
@@ -56,9 +58,11 @@ $(async function() {
 
     // call create, which calls the API and then builds a new user instance
     const newUser = await User.create(username, password, name);
-    currentUser = newUser;
-    syncCurrentUserToLocalStorage();
-    loginAndSubmitForm();
+    if (newUser) {
+      currentUser = newUser;
+      syncCurrentUserToLocalStorage();
+      loginAndSubmitForm();
+    }
   });
 
   /**
